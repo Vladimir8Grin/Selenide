@@ -19,7 +19,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class OrderTest {
-
+/*
     private WebDriver driver;
 
     @BeforeAll
@@ -43,10 +43,11 @@ public class OrderTest {
         driver.quit();
         driver = null;
     }
-
+*/
     private String generateDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
     }
+
 
     @Test
     public void TheForm() {
