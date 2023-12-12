@@ -1,10 +1,11 @@
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -13,9 +14,9 @@ public class OrderTest {
     private String generateDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
     }
+
     @Test
     public void theForm() {
-        Configuration.headless = true;
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Москва");
         String datePlanning = generateDate(3, "dd.MM.yyyy");
